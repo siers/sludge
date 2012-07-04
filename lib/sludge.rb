@@ -1,4 +1,5 @@
 require 'socket'
+require 'sludge/core_ext'
 
 module Sludge
   def self.daemonize
@@ -45,8 +46,4 @@ module Sludge
       p e
     end
   end
-end
-
-Pry.config.hooks.add_hook(:before_session, :load_sludge) do
-  Sludge.daemonize
 end
