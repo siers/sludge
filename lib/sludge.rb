@@ -43,7 +43,8 @@ module Sludge
     def process(input)
       load input
     rescue Exception => e
-      p e
+      puts e.message
+      puts e.backtrace.grep(/#{input}/).join("\n")
     end
   end
 end
